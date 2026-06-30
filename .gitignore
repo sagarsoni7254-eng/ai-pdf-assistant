@@ -1,0 +1,29 @@
+# Python
+__pycache__/
+*.pyc
+
+# Virtual Environment
+.venv/
+venv/
+
+# Environment Variables
+.env
+
+# Streamlit
+.streamlit/
+
+# Qdrant Local Storage
+qdrant_storage/
+
+# Uploaded PDFs
+data/uploads/
+
+# macOS
+.DS_Store
+
+# IDE
+.idea/
+.vscode/
+
+# Logs
+*.log
