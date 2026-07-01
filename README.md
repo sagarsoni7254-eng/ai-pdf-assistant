@@ -55,3 +55,149 @@ Unlike cloud-based AI applications, this project runs entirely on your machine u
 The project is designed as a modular, scalable codebase suitable for learning, portfolio projects, and further development.
 
 ---
+# ✨ Features
+
+## 📄 Document Management
+
+- 📤 Upload one or multiple PDF documents
+- 📚 Automatic PDF text extraction
+- ✂️ Intelligent text chunking
+- 🧠 Metadata-aware document processing
+- 🗂️ Document Manager
+- 🗑️ Delete individual documents
+- 🧹 Clear the complete knowledge base
+
+---
+
+## 🤖 AI Chat
+
+- 💬 Interactive chat interface
+- 🧠 Conversation memory
+- 📖 Context-aware responses
+- 📚 Rich source references
+- 🔍 Semantic document search
+- ⚡ Fast local inference using Ollama
+- 📝 Chat history
+
+---
+
+## 🔍 Retrieval-Augmented Generation (RAG)
+
+- Automatic text chunking
+- Sentence embeddings
+- Vector similarity search
+- Context retrieval
+- Metadata filtering
+- Grounded AI responses
+- Multi-document search
+
+---
+
+## 📊 User Interface
+
+- 🎨 Modern Streamlit interface
+- 📂 Sidebar document manager
+- 📈 Knowledge base statistics
+- 📤 Multiple PDF upload
+- 🧹 Clear Chat
+- 🗑️ Clear Database
+- 📱 Simple and responsive layout
+
+---
+
+# 🌟 Project Highlights
+
+✅ 100% Local AI
+
+✅ No OpenAI API Required
+
+✅ Privacy Friendly
+
+✅ Multiple PDF Support
+
+✅ Conversation Memory
+
+✅ Rich Source References
+
+✅ Qdrant Vector Database
+
+✅ Semantic Search
+
+✅ Modular Architecture
+
+✅ Production-Oriented Code Structure
+
+---
+
+# 🛠️ Technology Stack
+
+| Category | Technology |
+|-----------|------------|
+| Programming Language | Python 3.11+ |
+| User Interface | Streamlit |
+| Local LLM | Ollama (Llama 3.2) |
+| Vector Database | Qdrant |
+| Embedding Model | all-MiniLM-L6-v2 |
+| PDF Processing | PyMuPDF |
+| Vector Search | Semantic Similarity Search |
+| Version Control | Git & GitHub |
+| Dependency Management | uv |
+
+---
+
+# 📌 Why This Project?
+
+This project demonstrates the implementation of a complete Retrieval-Augmented Generation (RAG) pipeline using modern AI tools and frameworks.
+
+It combines document processing, semantic search, vector databases, and local large language models into a single application capable of answering questions based on uploaded PDF documents.
+
+The project is designed with a modular architecture, making it easy to extend with additional features such as streaming responses, PDF previews, dashboards, hybrid search, and cloud deployment.
+
+---
+
+# 🎯 Use Cases
+
+This application can be used for:
+
+- 📚 Study Notes
+- 📖 Research Papers
+- 📑 Company Documentation
+- 📄 User Manuals
+- 📘 E-books
+- 🧾 Technical Documentation
+- 🎓 Educational Material
+- 📋 Project Reports
+
+---
+
+# 📈 Current Version
+
+**Version:** `v1.0`
+
+### Included Features
+
+- ✅ Multiple PDF Upload
+- ✅ Local LLM (Ollama)
+- ✅ Semantic Search
+- ✅ Qdrant Vector Database
+- ✅ Conversation Memory
+- ✅ Rich Source References
+- ✅ Document Manager
+- ✅ Sidebar Statistics
+- ✅ Clear Database
+- ✅ Modular Service Architecture
+
+---
+
+# 🏆 Project Goals
+
+The primary goals of this project are:
+
+- Build a complete local RAG application
+- Learn vector databases and semantic search
+- Explore local LLM deployment with Ollama
+- Develop a modular and scalable architecture
+- Create a portfolio-ready AI application
+- Demonstrate modern AI engineering practices
+
+---
