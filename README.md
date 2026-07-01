@@ -201,3 +201,256 @@ The primary goals of this project are:
 - Demonstrate modern AI engineering practices
 
 ---
+# 🏗️ System Architecture
+
+The AI PDF Assistant follows a modular Retrieval-Augmented Generation (RAG) architecture.
+
+```text
+                    +----------------------+
+                    |    Upload PDF(s)     |
+                    +----------+-----------+
+                               |
+                               ▼
+                    +----------------------+
+                    |   PDF Text Loader    |
+                    +----------+-----------+
+                               |
+                               ▼
+                    +----------------------+
+                    |    Text Chunking     |
+                    +----------+-----------+
+                               |
+                               ▼
+                    +----------------------+
+                    | Sentence Embeddings  |
+                    +----------+-----------+
+                               |
+                               ▼
+                    +----------------------+
+                    |  Qdrant Vector DB    |
+                    +----------+-----------+
+                               ▲
+                               |
+                    User Question
+                               |
+                               ▼
+                    +----------------------+
+                    | Semantic Retrieval   |
+                    +----------+-----------+
+                               |
+                               ▼
+                    +----------------------+
+                    |     Ollama LLM       |
+                    +----------+-----------+
+                               |
+                               ▼
+                    AI Answer + Sources
+```
+
+---
+
+# 🔄 RAG Pipeline
+
+The application follows the Retrieval-Augmented Generation workflow.
+
+### Step 1 — Upload PDF
+
+The user uploads one or more PDF documents using the Streamlit interface.
+
+↓
+
+### Step 2 — Extract Text
+
+The application extracts readable text from every page of the uploaded PDF.
+
+↓
+
+### Step 3 — Chunking
+
+Large documents are divided into smaller chunks so they can be embedded efficiently.
+
+↓
+
+### Step 4 — Generate Embeddings
+
+Each text chunk is converted into a high-dimensional vector using the embedding model.
+
+↓
+
+### Step 5 — Store in Qdrant
+
+The generated vectors are stored inside Qdrant together with useful metadata.
+
+Example metadata:
+
+```json
+{
+  "document_id": "...",
+  "filename": "AI.pdf",
+  "chunk_index": 12,
+  "text": "Artificial Intelligence..."
+}
+```
+
+↓
+
+### Step 6 — User Question
+
+The user asks a question in natural language.
+
+↓
+
+### Step 7 — Semantic Search
+
+The question is embedded and compared against all stored vectors.
+
+The most relevant chunks are retrieved.
+
+↓
+
+### Step 8 — Context Building
+
+Retrieved chunks are combined into a prompt.
+
+Conversation history is also included.
+
+↓
+
+### Step 9 — Ollama
+
+The prompt is sent to the local Llama model.
+
+↓
+
+### Step 10 — Response
+
+The assistant generates an answer together with supporting source references.
+
+---
+
+# 📂 Project Structure
+
+```text
+AI PDF Assistant
+│
+├── app
+│   ├── api
+│   │   └── upload.py
+│   │
+│   ├── core
+│   │   ├── config.py
+│   │   ├── constants.py
+│   │   └── logger.py
+│   │
+│   ├── services
+│   │   ├── chunker.py
+│   │   ├── database_service.py
+│   │   ├── document_service.py
+│   │   ├── embedding_service.py
+│   │   ├── ingestion_service.py
+│   │   ├── llm_service.py
+│   │   ├── pdf_loader.py
+│   │   ├── search_service.py
+│   │   └── vector_service.py
+│   │
+│   └── main.py
+│
+├── frontend
+│   ├── chat_page.py
+│   ├── sidebar.py
+│   ├── streamlit_app.py
+│   └── upload_page.py
+│
+├── tests
+│
+├── pyproject.toml
+├── uv.lock
+├── README.md
+└── LICENSE
+```
+
+---
+
+# 🧩 Service Layer
+
+The application is divided into reusable service modules.
+
+| Service | Responsibility |
+|----------|----------------|
+| PDF Loader | Extract text from PDF files |
+| Chunker | Split documents into chunks |
+| Embedding Service | Generate vector embeddings |
+| Vector Service | Store and search vectors in Qdrant |
+| Search Service | Retrieve relevant chunks |
+| LLM Service | Communicate with Ollama |
+| Database Service | Clear and manage the knowledge base |
+| Document Service | Manage uploaded documents |
+
+---
+
+# 🔐 Metadata Stored with Every Chunk
+
+Each document chunk is stored with metadata to support advanced features.
+
+Current metadata includes:
+
+- Document ID
+- Filename
+- Source Path
+- Chunk Index
+- Chunk Text
+
+This metadata enables:
+
+- Individual document deletion
+- Rich source references
+- Document statistics
+- Future page-aware citations
+
+---
+
+# 📊 Data Flow
+
+```text
+PDF
+ │
+ ▼
+Text Extraction
+ │
+ ▼
+Chunking
+ │
+ ▼
+Embeddings
+ │
+ ▼
+Qdrant
+ │
+ ▼
+Semantic Search
+ │
+ ▼
+Context
+ │
+ ▼
+Ollama
+ │
+ ▼
+Answer + Sources
+```
+
+---
+
+# 💡 Design Principles
+
+The project follows several software engineering principles:
+
+- Modular architecture
+- Separation of concerns
+- Service-oriented design
+- Reusable components
+- Scalable project structure
+- Easy future extensibility
+- Clean and maintainable code
+
+---
