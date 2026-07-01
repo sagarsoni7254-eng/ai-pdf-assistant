@@ -226,3 +226,296 @@ AI PDF Assistant
 ---
 
 > **End of Part 1**
+> 
+> ---
+
+# ⚙️ Installation
+
+## 1️⃣ Clone the Repository
+
+```bash
+git clone https://github.com/sagarsoni7254-eng/ai-pdf-assistant.git
+```
+
+Move into the project directory:
+
+```bash
+cd ai-pdf-assistant
+```
+
+---
+
+## 2️⃣ Create a Virtual Environment
+
+### Windows
+
+```bash
+python -m venv .venv
+```
+
+Activate:
+
+```bash
+.venv\Scripts\activate
+```
+
+---
+
+### macOS / Linux
+
+```bash
+python3 -m venv .venv
+```
+
+Activate:
+
+```bash
+source .venv/bin/activate
+```
+
+---
+
+## 3️⃣ Install Dependencies
+
+If using **uv**:
+
+```bash
+uv sync
+```
+
+Or using pip:
+
+```bash
+pip install -r requirements.txt
+```
+
+---
+
+## 4️⃣ Install Ollama
+
+Download and install Ollama:
+
+https://ollama.com/download
+
+Pull the required model:
+
+```bash
+ollama pull llama3.2
+```
+
+Start Ollama:
+
+```bash
+ollama serve
+```
+
+---
+
+## 5️⃣ Start Qdrant
+
+Run Qdrant locally using Docker:
+
+```bash
+docker run -p 6333:6333 qdrant/qdrant
+```
+
+---
+
+## 6️⃣ Run the Application
+
+Start Streamlit:
+
+```bash
+streamlit run frontend/streamlit_app.py
+```
+
+Open your browser:
+
+```
+http://localhost:8501
+```
+
+---
+
+# ⚙️ Configuration
+
+Current configuration:
+
+| Setting | Value |
+|----------|--------|
+| LLM | llama3.2 |
+| Embedding Model | all-MiniLM-L6-v2 |
+| Vector Database | Qdrant |
+| UI | Streamlit |
+
+---
+
+# 🚀 How to Use
+
+### Step 1
+
+Upload one or more PDF documents.
+
+---
+
+### Step 2
+
+The application automatically:
+
+- Extracts text
+- Splits text into chunks
+- Creates embeddings
+- Stores vectors in Qdrant
+
+---
+
+### Step 3
+
+Ask questions in natural language.
+
+Examples:
+
+```
+What is Optical Fiber?
+
+Explain AI in simple words.
+
+Summarize Chapter 3.
+
+What are the advantages of Machine Learning?
+
+List the important points.
+
+Compare CNN and RNN.
+```
+
+---
+
+### Step 4
+
+The assistant:
+
+- Searches relevant chunks
+- Retrieves context
+- Sends context to Ollama
+- Generates an accurate answer
+- Displays supporting sources
+
+---
+
+# 📸 Screenshots
+
+> Screenshots will be added soon.
+
+## 🏠 Home Page
+
+```
+screenshots/home.png
+```
+
+---
+
+## 📄 Upload Documents
+
+```
+screenshots/upload.png
+```
+
+---
+
+## 💬 Chat
+
+```
+screenshots/chat.png
+```
+
+---
+
+## 📚 Rich Source References
+
+```
+screenshots/sources.png
+```
+
+---
+
+## 📂 Sidebar
+
+```
+screenshots/sidebar.png
+```
+
+---
+
+# 🧠 RAG Workflow
+
+```text
+User uploads PDF
+        │
+        ▼
+Extract Text
+        │
+        ▼
+Chunk Text
+        │
+        ▼
+Generate Embeddings
+        │
+        ▼
+Store in Qdrant
+        │
+        ▼
+User asks question
+        │
+        ▼
+Generate Question Embedding
+        │
+        ▼
+Semantic Search
+        │
+        ▼
+Retrieve Relevant Chunks
+        │
+        ▼
+Build Prompt
+        │
+        ▼
+Ollama LLM
+        │
+        ▼
+Answer + Sources
+```
+
+---
+
+# 💡 Example Questions
+
+You can ask questions like:
+
+- What is Artificial Intelligence?
+- Explain this chapter in simple words.
+- Summarize the uploaded document.
+- What are the key points?
+- Compare two concepts.
+- Give me examples.
+- Explain this topic for beginners.
+- Create revision notes.
+- List important interview questions.
+
+---
+
+# 📈 Current Features
+
+- Multiple PDF Upload
+- Semantic Search
+- Local LLM
+- Qdrant Vector Database
+- Conversation Memory
+- Rich Source References
+- Document Manager
+- Sidebar Statistics
+- Clear Database
+- Modern UI
+- Modular Architecture
+
+---
