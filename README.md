@@ -454,3 +454,272 @@ The project follows several software engineering principles:
 - Clean and maintainable code
 
 ---
+# ⚙️ Installation
+
+Follow these steps to set up the project on your local machine.
+
+---
+
+## 📋 Prerequisites
+
+Before running the project, make sure you have the following installed:
+
+- Python 3.11 or later
+- Git
+- Ollama
+- Docker (for Qdrant)
+- uv (Python package manager)
+
+---
+
+## 📥 Clone the Repository
+
+```bash
+git clone https://github.com/sagarsoni7254-eng/ai-pdf-assistant.git
+```
+
+Move into the project directory:
+
+```bash
+cd ai-pdf-assistant
+```
+
+---
+
+## 🐍 Create a Virtual Environment
+
+### Windows
+
+```bash
+python -m venv .venv
+```
+
+Activate:
+
+```bash
+.venv\Scripts\activate
+```
+
+---
+
+### macOS / Linux
+
+```bash
+python3 -m venv .venv
+```
+
+Activate:
+
+```bash
+source .venv/bin/activate
+```
+
+---
+
+## 📦 Install Dependencies
+
+This project uses **uv** for dependency management.
+
+Install all required packages:
+
+```bash
+uv sync
+```
+
+This command installs all dependencies defined in:
+
+- pyproject.toml
+- uv.lock
+
+---
+
+# 🤖 Install Ollama
+
+Download Ollama from:
+
+https://ollama.com/download
+
+Verify installation:
+
+```bash
+ollama --version
+```
+
+Download the required model:
+
+```bash
+ollama pull llama3.2
+```
+
+Start the Ollama server:
+
+```bash
+ollama serve
+```
+
+---
+
+# 🗄️ Start Qdrant
+
+Run Qdrant locally using Docker:
+
+```bash
+docker run -p 6333:6333 qdrant/qdrant
+```
+
+Verify Qdrant is running:
+
+Open your browser:
+
+```
+http://localhost:6333/dashboard
+```
+
+---
+
+# 🚀 Run the Application
+
+Launch Streamlit:
+
+```bash
+streamlit run frontend/streamlit_app.py
+```
+
+Open:
+
+```
+http://localhost:8501
+```
+
+The application should now be running successfully.
+
+---
+
+# 📂 Configuration
+
+Current default configuration:
+
+| Setting | Value |
+|----------|--------|
+| LLM | llama3.2 |
+| Embedding Model | all-MiniLM-L6-v2 |
+| Vector Database | Qdrant |
+| Frontend | Streamlit |
+| Language | Python |
+
+---
+
+# 💻 Using the Application
+
+## Step 1
+
+Upload one or more PDF documents.
+
+---
+
+## Step 2
+
+The application automatically:
+
+- Extracts text
+- Splits documents into chunks
+- Generates embeddings
+- Stores vectors in Qdrant
+
+---
+
+## Step 3
+
+Ask questions using natural language.
+
+Examples:
+
+```
+What is Artificial Intelligence?
+
+Explain Machine Learning.
+
+Summarize Chapter 5.
+
+Compare CNN and RNN.
+
+List important interview questions.
+
+Explain this topic for beginners.
+```
+
+---
+
+## Step 4
+
+The assistant:
+
+- Retrieves relevant document chunks
+- Builds context
+- Sends the prompt to Ollama
+- Generates an answer
+- Displays source references
+
+---
+
+# 🛠 Troubleshooting
+
+## Ollama not running
+
+Start Ollama:
+
+```bash
+ollama serve
+```
+
+---
+
+## Model not found
+
+Download the model:
+
+```bash
+ollama pull llama3.2
+```
+
+---
+
+## Qdrant connection failed
+
+Make sure Docker is running.
+
+Restart Qdrant:
+
+```bash
+docker run -p 6333:6333 qdrant/qdrant
+```
+
+---
+
+## Streamlit not found
+
+Activate the virtual environment:
+
+```bash
+source .venv/bin/activate
+```
+
+Then install dependencies again:
+
+```bash
+uv sync
+```
+
+---
+
+# 📌 Supported Features
+
+- ✅ Multiple PDF Upload
+- ✅ Semantic Search
+- ✅ Conversation Memory
+- ✅ Rich Source References
+- ✅ Local LLM
+- ✅ Qdrant Vector Database
+- ✅ Modular Architecture
+- ✅ Modern UI
+- ✅ Easy Installation
