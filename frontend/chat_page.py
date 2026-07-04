@@ -124,38 +124,30 @@ def chat_page():
         )
 
     # ----------------------------
-    # Ask LLM
-    # ----------------------------
-
-    with st.spinner("Generating answer..."):
-
-        answer = llm.ask(
-            context=context,
-            question=question,
-            history=st.session_state.messages,
-        )
-
-    # ----------------------------
-    # Display Assistant
+    # Ask LLM (Streaming)
     # ----------------------------
 
     with st.chat_message("assistant"):
 
-        st.write(answer)
+        answer = st.write_stream(
+            llm.stream_ask(
+                context=context,
+                question=question,
+                history=st.session_state.messages,
+            )
+        )
 
         st.divider()
 
         st.subheader("📚 Sources")
 
         for source in sources:
-
             title = (
                 f"📄 {source['filename']}  |  "
                 f"🧩 Chunk {source['chunk_index']}"
             )
 
             with st.expander(title):
-
                 st.markdown(
                     f"**Source File:** `{source['filename']}`"
                 )

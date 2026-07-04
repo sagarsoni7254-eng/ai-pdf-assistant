@@ -723,3 +723,222 @@ uv sync
 - ✅ Modular Architecture
 - ✅ Modern UI
 - ✅ Easy Installation
+- ---
+
+# 📸 Application Screenshots
+
+> Screenshots will be updated as the project evolves.
+
+## 🏠 Home Page
+
+The main interface where users can upload documents and interact with the AI assistant.
+
+```text
+screenshots/home.png
+```
+
+---
+
+## 📤 Upload PDF
+
+Upload one or multiple PDF documents.
+
+```text
+screenshots/upload.png
+```
+
+---
+
+## 💬 AI Chat
+
+Ask questions about uploaded documents using natural language.
+
+```text
+screenshots/chat.png
+```
+
+---
+
+## 📚 Rich Source References
+
+Every response includes supporting document references.
+
+```text
+screenshots/sources.png
+```
+
+---
+
+## 📂 Document Manager
+
+Manage uploaded documents and maintain your knowledge base.
+
+```text
+screenshots/sidebar.png
+```
+
+---
+
+# 🔮 Future Roadmap
+
+The following features are planned for future releases.
+
+## 🚀 Version 1.1
+
+- ⚡ Streaming AI Responses
+- 📄 Page-aware Source References
+- 📊 Knowledge Base Dashboard
+- 📈 Similarity Score Display
+
+---
+
+## 🚀 Version 1.2
+
+- 📑 PDF Preview
+- 📤 Export Chat (PDF & Markdown)
+- 🎨 Improved User Interface
+- 🌙 Dark / Light Theme
+
+---
+
+## 🚀 Version 2.0
+
+- 🌐 Multi-user Authentication
+- ☁ Cloud Deployment
+- 🐳 Docker Compose Support
+- 🔍 Hybrid Search (Semantic + Keyword)
+- 📂 DOCX & TXT Support
+- 🎙 Voice Input
+- 🔊 Text-to-Speech Responses
+
+---
+
+# 🤝 Contributing
+
+Contributions are welcome!
+
+If you'd like to improve this project:
+
+1. Fork the repository.
+2. Create a new branch.
+
+```bash
+git checkout -b feature/my-feature
+```
+
+3. Commit your changes.
+
+```bash
+git commit -m "Add my feature"
+```
+
+4. Push your branch.
+
+```bash
+git push origin feature/my-feature
+```
+
+5. Open a Pull Request.
+
+---
+
+# 🐞 Reporting Issues
+
+If you find a bug or want to request a feature, please create a GitHub Issue.
+
+Please include:
+
+- Operating System
+- Python Version
+- Error Message
+- Steps to Reproduce
+
+---
+
+# 📚 Learning Outcomes
+
+This project demonstrates practical experience with:
+
+- Python Development
+- Streamlit Applications
+- Retrieval-Augmented Generation (RAG)
+- Semantic Search
+- Vector Databases
+- Local Large Language Models
+- Software Architecture
+- Git & GitHub
+- AI Application Development
+
+---
+
+# 📜 License
+
+This project is licensed under the **MIT License**.
+
+See the [LICENSE](LICENSE) file for details.
+
+---
+
+# 👨‍💻 Author
+
+## Sagar Soni
+
+**AI & Machine Learning Enthusiast**
+
+Interested in:
+
+- 🤖 Artificial Intelligence
+- 🧠 Machine Learning
+- 📄 Retrieval-Augmented Generation (RAG)
+- 💬 Large Language Models
+- 🐍 Python Development
+
+GitHub:
+
+https://github.com/sagarsoni7254-eng
+
+---
+
+# 🙏 Acknowledgements
+
+This project would not have been possible without the amazing open-source community.
+
+Special thanks to:
+
+- Python
+- Streamlit
+- Ollama
+- Qdrant
+- Sentence Transformers
+- PyMuPDF
+- GitHub
+
+---
+
+# ⭐ Support
+
+If you found this project useful:
+
+⭐ Star this repository
+
+🍴 Fork the project
+
+💬 Share your feedback
+
+Your support motivates future improvements.
+
+---
+
+<div align="center">
+
+# 🤖 AI PDF Assistant
+
+### Built with ❤️ using Python, Streamlit, Ollama and Qdrant
+
+---
+
+**Thank you for visiting this repository!**
+
+⭐ If you like this project, please consider giving it a star.
+
+</div>
